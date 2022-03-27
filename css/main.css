@@ -1,0 +1,57 @@
+#gate {
+    cursor:url(ico/cursor_5.png),auto;
+    margin-bottom: 100px;
+}
+
+#ball {
+    cursor:url(ico/cursor_6.png),auto;
+}
+
+body{
+    cursor:url(ico/cursor_5.png),auto;
+}
+
+.csm1{
+    position: relative;
+    animation: shake 2s linear infinite;
+}
+
+@keyframes shake{
+    0%,100%{
+        transform:translate3d(0px,-4px,0px);
+    }
+    50%{
+        transform:translate3d(0px,4px,0px);
+    }
+}
+
+.fc4:hover{
+    position: relative;
+    animation: take_off 0.2s linear infinite;
+}
+
+@keyframes take_off{
+    0%,100%{
+        transform:translate3d(0px,-2px,0px);
+    }
+    50%{
+        transform:translate3d(0px,2px,0px);
+    }
+}
+
+.fc5{
+    position: relative;
+    animation: take_off 0.2s linear infinite;
+}
+
+p{
+    transition: all 0.2s ease-in-out;
+}
+
+p:hover {
+    color: #ffffff;
+}
+
+p{
+    color: #495057;
+}

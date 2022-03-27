@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="utf-8">
+	<title>宇宙空间站</title>
+	<link rel="stylesheet" href="css/onepage-scroll.css" />
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="node_modules/aplayer/dist/APlayer.min.css">
+	<link rel="stylesheet" href="node_modules/aplayer/dist/APlayer.min.css.map">
+	<link rel="stylesheet" href="css/main.css">
+	<style>
+		p.title {
+			position: relative;
+			top: 35%;
+			font: 700 40px "Microsoft Yahei";
+			text-align: center;
+		}
+	</style>
+	<script src="js/jquery-1.9.0.min.js"></script>
+	<script src="js/jquery.onepage-scroll.min.js"></script>
+	<script src="node_modules/aplayer/dist/APlayer.min.js"></script>
+	<script src="node_modules/aplayer/dist/APlayer.min.js.map"></script>
+	<script src="js/main.js"></script>
+	<script>
+		$(function () {
+			$('.main').onepage_scroll({
+				sectionContainer: '.page'
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="aplayer"></div>
+	<div class="starfield">
+		<div class="static"></div>
+		<div class="moving-1"></div>
+		<div class="moving-2" id="moving-2"></div>
+		<div class="moving-3" id="moving-3"></div>
+	</div>
+
+	<div class="word" style="top:3.019999999999996vh;animation-delay:0.754999999999999s;">人们</div>
+	<div class="word" style="top:9.067999999999998vh;animation-delay:2.2669999999999995s;">在基座旁</div>
+	<div class="word" style="top:12.447999999999993vh;animation-delay:3.1119999999999983s;">发现了</div>
+	<div class="word" style="top:21.732vh;animation-delay:5.433s;">一块小小的石碑</div>
+	<div class="word" style="top:24.096000000000004vh;animation-delay:6.024000000000001s;">它几乎</div>
+	<div class="word" style="top:27.548000000000002vh;animation-delay:6.8870000000000005s;">被野草完全埋没</div>
+	<div class="word" style="top:30.195999999999998vh;animation-delay:7.5489999999999995s;">上书：</div>
+	<div class="word" style="top:37.54400000000001vh;animation-delay:9.386000000000003s;">红岸基地原址</div>
+	<div class="word" style="top:40.988vh;animation-delay:10.997s;">（1968-1987）</div>
+	<div class="word" style="top:46.75999999999999vh;animation-delay:11.689999999999998s;">中国科学院</div>
+	<div class="word" style="top:50.18799999999999vh;animation-delay:12.546999999999997s;">1989.03.21</div>
+	<div class="word" style="top:58.512vh;animation-delay:14.628s;">碑</div>
+	<div class="word" style="top:60.912000000000006vh;animation-delay:15.228000000000002s;">是那么小</div>
+	<div class="word" style="top:63.816vh;animation-delay:15.954s;">与其说是</div>
+	<div class="word" style="top:76.00399999999999vh;animation-delay:19.000999999999998s;">为了纪念</div>
+	<div class="word" style="top:81.00399999999999vh;animation-delay:20.250999999999998s;">更像是</div>
+	<div class="word" style="top:84.28800000000001vh;animation-delay:21.072000000000003s;">为了忘却。</div>
+
+	<div class="main">
+		<div class="page page1">
+			<p class="title">欢迎来到三体宇宙</p>
+			<p class="title">这里是恒星级飞船太空港</p>
+			<p class="title">(如需前往地球博物馆，请驾驶自然选择号飞往下方星门)</p>
+			<div class="fc4" style="margin-left: 850px;margin-top: 400px;">
+				<img src="img/fc4.png" id="ball" class="ball" name="fc" onmousemove="mouseOver()" onmouseout="mouseOut()" height="180px" width="318.6px">
+				<script>
+					function mouseOver() {
+						document.fc.src = "img/fc2.png";
+						var moving3 = document.getElementById("ball");
+						moving3.setAttribute("class", "fc5");
+					}
+					function mouseOut() {
+						document.fc.src = "img/fc4.png"
+						var moving3 = document.getElementById("ball");
+						moving3.setAttribute("class", "ball");
+					}
+				</script>
+			</div>
+		</div>
+		<div class="page page2">
+			<p class="title">地球文明博物馆</p>
+			<p class="title">《三体Ⅰ》</p>
+			<div style="margin-top:-50px;margin-left: 200px;">
+				<img src="img/st1.png" height="340px" width="240px">
+			</div>
+			<div class="csm1" style="margin-top:-80px;margin-left: 100px;">
+				<img src="img/csm1.png" id="gate" class="droppable" height="500px" width="440px">
+			</div>
+			<script>
+				let currentDroppable = null;
+
+				function enterDroppable(elem) {
+					var moving3 = document.getElementById("moving-3");
+					moving3.setAttribute("class", "moving-3-1");
+					var moving3 = document.getElementById("moving-2");
+					moving3.setAttribute("class", "moving-2-1");
+					setTimeout(function () {
+						let yq1 = confirm("是否进入前进四状态?");
+						if (yq1 == true) {
+							location.href = "st1.html"
+						}
+					}, 1000);
+				}
+
+				function leaveDroppable(elem) {
+					elem.style.background = '';
+					var moving3 = document.getElementById("moving-3");
+					moving3.setAttribute("class", "moving-3");
+					var moving3 = document.getElementById("moving-2");
+					moving3.setAttribute("class", "moving-2");
+				}
+
+				ball.ondragstart = function () {
+					return false;
+				};
+			</script>
+		</div>
+		<!--第三屏-->
+		<div class="page page3">
+			<p class="title">地球文明博物馆</p>
+			<p class="title">《三体Ⅱ·黑暗森林》</p>
+			<div style="margin-top:-50px;margin-left: 200px;">
+				<img src="img/st2.png" height="340px" width="240px">
+			</div>
+			<div class="csm1" style="margin-top:-80px;margin-left: 100px;">
+				<img src="img/csm1.png" id="gate" class="droppable2" height="500px" width="440px">
+			</div>
+			<script>
+				let currentDroppable2 = null;
+
+				function enterDroppable2(elem) {
+					var moving3 = document.getElementById("moving-3");
+					moving3.setAttribute("class", "moving-3-1");
+					var moving3 = document.getElementById("moving-2");
+					moving3.setAttribute("class", "moving-2-1");
+					setTimeout(function () {
+						let yq2 = confirm("是否进入前进四状态?");
+						if (yq2 == true) {
+							location.href = "st2.html"
+						}
+					}, 1000);
+				}
+
+				function leaveDroppable2(elem) {
+					elem.style.background = '';
+					var moving3 = document.getElementById("moving-3");
+					moving3.setAttribute("class", "moving-3");
+					var moving3 = document.getElementById("moving-2");
+					moving3.setAttribute("class", "moving-2");
+				}
+
+				ball.ondragstart = function () {
+					return false;
+				};
+			</script>
+		</div>
+		<div class="page page4">
+			<p class="title">地球文明博物馆</p>
+			<p class="title">《三体Ⅲ·死神永生》</p>
+			<div style="margin-top:-50px;margin-left: 200px;">
+				<img src="img/st3.png" height="340px" width="240px">
+			</div>
+			<div class="csm1" style="margin-top:-80px;margin-left: 100px;">
+				<img src="img/csm1.png" id="gate" class="droppable3" height="500px" width="440px">
+			</div>
+			<script>
+				let currentDroppable3 = null;
+
+				ball.onmousedown = function (event) {
+
+					let shiftX = event.clientX - ball.getBoundingClientRect().left;
+					let shiftY = event.clientY - ball.getBoundingClientRect().top;
+
+					ball.style.position = 'absolute';
+					ball.style.zIndex = 1000;
+					document.body.append(ball);
+
+					moveAt(event.pageX, event.pageY);
+
+					function moveAt(pageX, pageY) {
+						ball.style.left = pageX - shiftX + 'px';
+						ball.style.top = pageY - shiftY + 'px';
+					}
+
+					function onMouseMove3(event) {
+						moveAt(event.pageX, event.pageY);
+
+						ball.hidden = true;
+						let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+						ball.hidden = false;
+
+						if (!elemBelow) return;
+
+						let droppableBelow2 = elemBelow.closest('.droppable2');
+						if (currentDroppable2 != droppableBelow2) {
+							if (currentDroppable2) { // null when we were not over a droppable before this event
+								leaveDroppable2(currentDroppable2);
+							}
+							currentDroppable2 = droppableBelow2;
+							if (currentDroppable2) { // null if we're not coming over a droppable now
+								// (maybe just left the droppable)
+								enterDroppable2(currentDroppable2);
+							}
+						}
+
+						let droppableBelow = elemBelow.closest('.droppable');
+						if (currentDroppable != droppableBelow) {
+							if (currentDroppable) { // null when we were not over a droppable before this event
+								leaveDroppable(currentDroppable);
+							}
+							currentDroppable = droppableBelow;
+							if (currentDroppable) { // null if we're not coming over a droppable now
+								// (maybe just left the droppable)
+								enterDroppable(currentDroppable);
+							}
+						}
+
+						let droppableBelow3 = elemBelow.closest('.droppable3');
+						if (currentDroppable3 != droppableBelow3) {
+							if (currentDroppable3) { // null when we were not over a droppable before this event
+								leaveDroppable3(currentDroppable3);
+							}
+							currentDroppable3 = droppableBelow3;
+							if (currentDroppable3) { // null if we're not coming over a droppable now
+								// (maybe just left the droppable)
+								enterDroppable3(currentDroppable3);
+							}
+						}
+					}
+
+					document.addEventListener('mousemove', onMouseMove3);
+
+					ball.onmouseup = function () {
+						document.removeEventListener('mousemove', onMouseMove3);
+						ball.onmouseup = null;
+					};
+
+				};
+
+				function enterDroppable3(elem) {
+					var moving3 = document.getElementById("moving-3");
+					moving3.setAttribute("class", "moving-3-1");
+					var moving3 = document.getElementById("moving-2");
+					moving3.setAttribute("class", "moving-2-1");
+					setTimeout(function () {
+						let yq2 = confirm("是否启动跃迁引擎?");
+						if (yq2 == true) {
+							location.href = "st3.html"
+						}
+					}, 1000);
+				}
+
+				function leaveDroppable3(elem) {
+					elem.style.background = '';
+					var moving3 = document.getElementById("moving-3");
+					moving3.setAttribute("class", "moving-3");
+					var moving3 = document.getElementById("moving-2");
+					moving3.setAttribute("class", "moving-2");
+				}
+
+				ball.ondragstart = function () {
+					return false;
+				};
+			</script>
+		</div>
+	</div>
+
+</body>
+<script>
+	const ap = new APlayer({
+		container: document.getElementById('aplayer'),
+		mini: true,
+		fixed: true,
+		autoplay: true,
+		audio: [
+		{
+            name: 'music/这是我们的责任 (Its our duty)',
+            artist: '三体宇宙',
+            url: 'music/这是我们的责任 (Its our duty).mp3',
+            cover: 'img/yhx.jpg',
+            theme: '#409EFF'
+        },
+		{
+            name: '增援未来计划 (The Future Reinforcements Project)',
+            artist: '三体宇宙',
+            url: 'music/增援未来计划 (The Future Reinforcements Project).mp3',
+            cover: 'img/yhx.jpg',
+            theme: '#409EFF'
+        },
+		{
+            name: '我正在想你 (Thinking about you)',
+            artist: '三体宇宙',
+            url: 'music/我正在想你 (Thinking about you).mp3',
+            cover: 'img/yhx.jpg',
+            theme: '#409EFF'
+        },
+		{
+            name: '木星基地 (Jupiter Base)',
+            artist: '三体宇宙',
+            url: 'music/木星基地 (Jupiter Base).mp3',
+            cover: 'img/yhx.jpg',
+            theme: '#409EFF'
+        },
+		{
+            name: '父亲 (Father)',
+            artist: '三体宇宙',
+            url: 'music/父亲 (Father).mp3',
+            cover: 'img/yhx.jpg',
+            theme: '#409EFF'
+        },
+		{
+			name: '夜航星',
+			artist: '不才',
+			url: 'music/不才,三体宇宙 - 夜航星 (Night Voyager).mp3',
+			cover: 'img/yhx.jpg',
+			lrc: 'music/夜航星 (Night Voyager) - 不才.lrc',
+			theme: '#409EFF',
+		}]
+	});
+</script>
+
+</html>
